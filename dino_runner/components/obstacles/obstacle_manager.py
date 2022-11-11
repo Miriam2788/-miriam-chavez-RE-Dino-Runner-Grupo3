@@ -2,7 +2,7 @@ import pygame
 import random
 from dino_runner.components.obstacles.cactus import SmallCactus, LargeCactus
 from dino_runner.utils.constants import(
-    SMALL_CACTUS, LARGE_CACTUS)
+    SMALL_CACTUS, LARGE_CACTUS, BIRD)
 
 class Obstaclemanager:
     def __init__(self):
@@ -47,6 +47,6 @@ class Obstaclemanager:
         for obstacle in self.obstacles:
             obstacle.draw(screen)
 
-
+    
     def reset_obstacles(self, self1):
         self.obstacles = []
