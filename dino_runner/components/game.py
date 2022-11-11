@@ -35,9 +35,9 @@ class Game:
 
     def create_components(self):
         self.obstacle_manager.reset_obstacles(self)
-        self.power_up_manager.reset_power_ups(self.points)
+        self.power_up_manager.reset_power_ups(self, self.points)
         self.player_heart_manager.reset_heart()
-        self.playing = 0
+        self.playing = True
         self.game_speed = 20
     
     def execute(self):

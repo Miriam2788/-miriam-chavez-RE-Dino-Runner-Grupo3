@@ -14,8 +14,8 @@ class PowerUPManager:
 
     def reset_power_ups(self, points):
         self.power_ups = []
-        self.poinst = points
-        self.when_appears = random.randint(200, 300) + self.poins
+        self.points = points
+        self.when_appears = random.randint(200, 300) + self.points
 
     def gennerate_power_ups(self, poins):
         self.poinst = poins
