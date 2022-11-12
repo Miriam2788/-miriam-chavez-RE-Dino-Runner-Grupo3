@@ -74,3 +74,10 @@ DEFAULT_TYPE = "default"
 SHIELD_TYPE = "shield"
 HAMMER_TYPE = "hammer"
 HEART_COUNT = 4
+
+pygame.mixer.init()
+Sounds = [
+    pygame.mixer.Sound("bruh.wav"),
+    pygame.mixer.Sound("scream.wav"),
+    pygame.mixer.Sound("song.wav"),
+]

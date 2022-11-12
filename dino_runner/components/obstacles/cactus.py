@@ -2,7 +2,7 @@ import random
 
 from dino_runner.components.obstacles.obstacle import Obstacle
 from dino_runner.utils.constants import (LARGE_CACTUS)
-""" aqui agregar una instancia de obstacle manager para asi poner mi if """
+
 
 
 

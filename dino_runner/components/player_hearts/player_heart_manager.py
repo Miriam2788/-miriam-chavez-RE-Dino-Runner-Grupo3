@@ -1,10 +1,13 @@
 from dino_runner.components.player_hearts.heart import Heart
-from dino_runner.utils.constants import HEART_COUNT
+from dino_runner.utils.constants import HEART_COUNT,Sounds
+import pygame
+pygame.mixer.init()
 class PlayerHeartManager:
     def __init__(self):
         self.heart_count = HEART_COUNT
     def reduce_heart(self):
         self.heart_count -= 1
+        Sounds[0].play()
     def draw(self, screen):
         x_position = 10
         y_position = 20

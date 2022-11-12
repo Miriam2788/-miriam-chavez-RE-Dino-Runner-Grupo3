@@ -2,11 +2,11 @@ import pygame
 from dino_runner.components import text_utils
 from dino_runner.components.dinosour import Dinosour
 from dino_runner.components.power_ups.power_up_manager import PowerUpManager
-from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, RUNNING
+from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, RUNNING, Sounds
 from dino_runner.components.obstacles.obstacle_manager import ObstacleManager
 from dino_runner.components.player_hearts.player_heart_manager import PlayerHeartManager
 
-
+pygame.mixer.init()
 class Game:
     def __init__(self) :
         pygame.init()
@@ -51,7 +51,7 @@ class Game:
             if event.type == pygame.QUIT:
                 self.playing = False
                 self.running = False
-        self.screen.fill((255,255,255))
+        self.screen.fill((0,0,0))
 
     def update(self):
         user_input = pygame.key.get_pressed()
@@ -121,12 +121,14 @@ class Game:
             self.screen.blit (score, score_rect)
             self.screen.blit ( text, text_rect)
             self.screen.blit (death, death_rect)
+            Sounds[2].play()
         self.screen.blit(RUNNING[0],(half_screen_width-20, half_screen_height-140))
+        
 
     def show_menu(self):
         self.running = True
 
-        white_color = (255,255,255)
+        white_color = (18, 116, 165 )
         self.screen.fill(white_color)
         self.print_menu_elements()
         pygame.display.update()

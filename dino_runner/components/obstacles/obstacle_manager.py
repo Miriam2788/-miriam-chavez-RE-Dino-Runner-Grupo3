@@ -2,9 +2,9 @@
 import pygame
 import random
 from dino_runner.components.obstacles.cactus import Cactus
-from dino_runner.components.obstacles.obstacle import Obstacle
-from dino_runner.utils.constants import (SMALL_CACTUS, LARGE_CACTUS)
-
+from dino_runner.components.obstacles.bird import Birds
+from dino_runner.utils.constants import (SMALL_CACTUS, LARGE_CACTUS, BIRD, Sounds)
+pygame.mixer.init()
 
 class ObstacleManager:
     def __init__(self):
@@ -14,6 +14,7 @@ class ObstacleManager:
             cactus_size = random.randint(0,1)
             if cactus_size == 0:
                 self.obstacles.append(Cactus(LARGE_CACTUS))
+                
             else:
                 self.obstacles.append(Cactus(SMALL_CACTUS))
         for obstacle in self.obstacles:
