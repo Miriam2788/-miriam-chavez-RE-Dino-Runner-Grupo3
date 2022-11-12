@@ -110,7 +110,6 @@ class Dinosour(Sprite):
             time_to_show = round((self.shield_time_up - pygame.time.get_ticks())/ 1000, 2)
             if time_to_show >= 0:
                 if self.show_text:
-                    #Sounds[1].stop()
                     Sounds[1].play()
                     fond =  pygame.font.Font("freesansbold.ttf", 18)
                     text = fond.render(f"Shied enabled for {time_to_show}", True, (0,0,0))
@@ -118,6 +117,7 @@ class Dinosour(Sprite):
                     textRect.center = (500, 40)
                     screen.blit(text, textRect)
             else:
+                Sounds[1].stop()
                 self.shield = False
                 self.update_to_default(SHIELD_TYPE)
     
